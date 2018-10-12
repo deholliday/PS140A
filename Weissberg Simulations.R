@@ -11,8 +11,9 @@ weissberg_sim <- function(d_mean = 0, d_sd = 1, r_mean = 0, r_sd = 1, n = 435, s
     results[i,2] <- dr[1,2]
   }
   formula_means <- apply(results,2,mean)
-  names(formula_means) <- c("Formula 1 Mean","Formula 2 Mean")
-  return(formula_means)
+  formula_summary <- append(formula_means, (formula_means[1]-formula_means[2])/formula_means[1])
+  names(formula_summary) <- c("Formula 1 Mean","Formula 2 Mean","Improvement")
+  return(formula_summary)
 }
 
 
@@ -30,6 +31,7 @@ weissberg_close_sim <- function(d_mean = 0, d_sd = 1, r_factor = 1, n = 435, sim
     results[i,2] <- dr[1,2]
   }
   formula_means <- apply(results,2,mean)
-  names(formula_means) <- c("Formula 1 Mean","Formula 2 Mean")
-  return(formula_means)
+  formula_summary <- append(formula_means, (formula_means[1]-formula_means[2])/formula_means[1])
+  names(formula_summary) <- c("Formula 1 Mean","Formula 2 Mean","Improvement")
+  return(formula_summary)
 }
