@@ -1,2 +1,2 @@
 # PS140A
-Teaching Repository for UCLA PS140A (Congress)
+Teaching Repository for UCLA PS140A (Congress) - Fall 2018
